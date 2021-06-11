@@ -1,0 +1,106 @@
+<?php
+/**
+ * @package HippoAPIPlugin 
+ */
+
+/*
+ Plugin Name: Hippo API Plugin
+ Plugin URI: http://hippoapi.com/plugin
+ Description: This is the WordPress Developer Take-Home Assignment
+ Version: 1.0.0
+ Author: Javier Rodriguez
+ Author URI: https://hippoapi.com
+ License: GPLv2 or later
+ Text Domain: hippo-api-plugin
+*/
+
+/*
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+Copyright 2005-2015 Automattic, Inc.
+*/
+
+if ( ! function_exists( 'add_action' ) ) {
+	echo 'You have no access to this file.';
+	exit;
+}
+
+function HippoFormPlugin (){
+        $content = '';
+        $content .= '<h2>Contact Us</h2>';
+
+        $content .= '<label for="FirstName">First Name*</label>';
+        $content .= '<input type="text" name="FirstName"/>';
+
+        $content .= '<label for="MiddleName">Middle Name</label>';
+        $content .= '<input type="text" name="MiddleName"/>';
+
+        $content .= '<label for="LastName">Last Name*</label>';
+        $content .= '<input type="text" name="LastName"/>';
+
+        $content .= '<br/><label for="StreetAddress">Street Address*</label>';
+        $content .= '<input type="text" name="StreetAddress"/>';
+        
+        $content .= '<label for="Unit">Unit</label>';
+        $content .= '<input type="text" name="Unit"/>';
+
+        $content .= '<br/><label for="City">City*</label>';
+        $content .= '<input type="text" name="City"/>';
+
+        /*
+        $content .= '<label for="StateName">State*</label>';
+        $content .= '<select name="StateName">';
+            '<option value="small">Small</option>';
+            '<option value="medium">Medium</option>';
+            '<option value="large">Large</option>';
+        '</select>';
+        */
+
+        $content .= '<label for="ZipCode">Zip Code*</label>';
+        $content .= '<input type="text" name="ZipCode"/>';
+
+        $content .= '<br/><label for="DateSelected">Date of Birth*</label>';
+        $content .= '<input type="Date" name="DateSelected">';
+        
+
+        $content .= '<br/><label for="PhoneNumber">Phone Number*</label>';
+        $content .= '<input type="text" name="PhoneNumber"/>';
+
+        $content .= '<label for="EmailtreetAddress">Email Address*</label>';
+        $content .= '<input type="text" name="EmailAddress"/>';
+
+        
+        $content .= '<br/><label for="LivingType">Is This a House, Condo or a HO5?*</label>';
+        $content .= '<br/><input type="radio" name="LivingType" value="House"/>Name';
+        $content .= '<input type="radio" name="LivingType" value="Condo"/>Condo';
+        $content .= '<input type="radio" name="LivingType" value="HO5"/>HO5';
+        
+
+        $content .= '<br/><input type="Submit" name="SubmitForm" value="SUBMIT"/>';
+        
+    return $content;
+}
+
+add_shortcode('HippoForm','HippoFormPlugin');
+
+function FormCapture(){
+
+}
+
+function ApiGet($ContactForm){
+
+}
+
+?>
